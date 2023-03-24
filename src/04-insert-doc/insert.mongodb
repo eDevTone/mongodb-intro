@@ -1,0 +1,20 @@
+use("platzi_store")
+
+// Is posible to use the same name for the porducts.
+// The _id is the primary key of the collection. And it is unique.
+// If the _id is found, the document is not inserted.
+
+db.products.insertOne({
+  _id: 1,
+  name: "Product 1",
+  price: 1000
+
+})
+
+db.products.insertOne({
+  _id: 2,
+  name: "Product 2",
+  price: 100
+})
+
+db.products.find()

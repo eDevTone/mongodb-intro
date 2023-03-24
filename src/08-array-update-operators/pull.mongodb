@@ -1,0 +1,26 @@
+use("platzi_store")
+
+// Remove one element from array
+// db.inventory.updateMany(
+//   // query => get all documents
+//   {},
+//   {
+//     $pull: { //This operator only works in arrays, remove a element from array
+//       tags: 'book'
+//     }
+//   }
+// )
+
+//remove others elemetns from array
+db.inventory.updateMany(
+  // query => get all documents
+  {},
+  {
+    $pull: { //This operator only works in arrays, remove a element from array
+      tags: {
+        $in: ['appliance', 'school'] //operator in allows to send several parameters
+      }
+    }
+  }
+)
+

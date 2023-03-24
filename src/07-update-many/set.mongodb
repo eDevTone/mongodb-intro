@@ -1,0 +1,50 @@
+use('sample_training')
+
+
+db.zips.find({
+  city: 'CLEVELAND'
+}).count()
+
+
+// Set operator
+// db.zips.updateMany(
+//   //query
+//   {
+//   city: 'CLEVELAND'
+//   },
+//   //update -operators
+//   {
+//     $set: { // In this case the $set operator, is useful to add a new property
+//       myAtrr: 'Hello'
+//     }
+//   }
+// )
+
+//Rename operator
+// db.zips.updateMany(
+//   //query
+//   {
+//   city: 'CLEVELAND'
+//   },
+//   //update -operators
+//   {
+//     $rename: { // In this case the $rename operator, doesnt change the value only the name of the attribute
+//       myAtrr: 'my_data'
+//     }
+//   }
+// )
+
+
+//Delete operator $unset
+db.zips.updateMany(
+  //query
+  {
+  city: 'CLEVELAND'
+  },
+  //update -operators
+  {
+    $unset: { // In this case the $unset operator, remove the attribute in all documents that were selected
+      my_data: ''
+    }
+  }
+)

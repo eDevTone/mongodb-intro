@@ -1,0 +1,3 @@
+use("etone_store")
+
+db.products.find()
